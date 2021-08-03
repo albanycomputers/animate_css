@@ -17,9 +17,9 @@ function animate_css_config_info() {
 }
 
 /**
- * Implements hook_libraries_info().
+ * Implements hook_library_info().
  */
-function animate_css_libraries_info() {
+function animate_css_library_info() {
   $libraries['animate'] = array(
     'name' => 'animate',
     'vendor url' => 'http://daneden.me/animate/',
@@ -78,8 +78,7 @@ function animate_css_init() {
    if ($page_match > 0)
   {
   // If we have a page match according to the admin settings, load up the Animate CSS file.
-  backdrop_load('module', 'libraries');
-  libraries_load('animate');
+  backdrop_add_library('animate_css','animate');
   }
 
 }
